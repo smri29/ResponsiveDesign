@@ -1,6 +1,11 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+
 void main(){
-  runApp(RiApp());
+  runApp(DevicePreview(
+    enabled: true,
+    builder: (context) => RiApp(), // Wrap your app
+  ),);
 }
 
 class RiApp extends StatelessWidget {
@@ -8,6 +13,11 @@ class RiApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
       home: Home(),
     );
   }
