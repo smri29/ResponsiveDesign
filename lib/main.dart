@@ -33,17 +33,53 @@ class Home extends StatelessWidget {
         title: Text('Welcome'),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        color: Colors.blueGrey,
-        child: FractionallySizedBox(
-          widthFactor: 0.5,
-          heightFactor: 0.5,
-          child: Container(
-            color: Colors.white54,
+      body: Column(
+        children: [
+          /*Flexible(
+            flex: 2,
+            child: Container(
+              color: Colors.blueGrey,
+              //height: MediaQuery.of(context).size.height,
+              width: 200,
+            ),
           ),
-        ),
+          Flexible(
+            flex: 2,
+            child: Container(
+              color: Colors.deepOrangeAccent,
+              //height: 200,
+              width: 200,
+            ),
+          ),
+          Flexible(
+            flex: 2,
+            child: Container(
+              color: Colors.blue,
+              //height: 200,
+              width: 200,
+            ),
+          ),*/
+          /*Expanded(
+            child: Container(
+              color: Colors.blue,
+              //height: 200,
+              width: 200,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.black,
+              //height: 200,
+              width: 200,
+            ),
+          ),*/
+          AspectRatio(
+            aspectRatio: 16/9,
+            child: Container(
+              color: Colors.cyan,
+            ),
+          )
+        ],
       ),
     );// scaffold
   }
