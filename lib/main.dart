@@ -53,7 +53,7 @@ class Home extends StatelessWidget {
         title: Text('Welcome'),
         backgroundColor: Colors.purpleAccent,
       ),
-      body: OrientationBuilder(
+      /*body: OrientationBuilder(
         builder: (context, Orientation orientation) {
           print(orientation);
           if (orientation == Orientation.portrait){
@@ -86,6 +86,19 @@ class Home extends StatelessWidget {
             );
           }
         }
+      ),*/
+      body: LayoutBuilder
+        (builder: (context, BoxConstraints constraints){
+        if(constraints.maxWidth < 640){
+          return Text('This is a Smart Phone');
+        }
+        else if (constraints.maxWidth > 640 && constraints.maxWidth <1080){
+          return Text('This is a Tablet');
+        }
+        else{
+          return Text('This is a TV');
+        }
+      }
       ),
     );
   }
